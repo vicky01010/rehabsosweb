@@ -295,7 +295,7 @@ if (shouldSendEmail($pasien_nama, $nomor_surat_lengkap, $current_date_iso, $last
         $mail->CharSet    = 'UTF-8';
 
         $mail->setFrom('rehabsospelayanan@gmail.com', 'Sistem Rumah Singgah');
-        $mail->addAddress('bidangpelayananrehabsos@gmail.com', 'Dinas Sosial Bojonegoro'); 
+        $mail->addAddress('alfiakbartaufiqi2901@gmail.com', 'Dinas Sosial Bojonegoro'); 
 
         $mail->Subject = 'Surat Rekomendasi Rumah Singgah No: ' . $nomor_surat_lengkap . ' untuk ' . $pasien_nama;
         $mail->Body    = 'Terlampir surat rekomendasi rumah singgah yang baru saja diisi melalui sistem dengan nomor ' . $nomor_surat_lengkap . '.';
