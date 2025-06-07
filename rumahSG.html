@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Surat Rekomendasi Rumah Singgah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 1s ease-out;
+    }
+
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-200 via-teal-100 to-green-100 min-h-screen p-6 font-sans">
+
+  <div class="max-w-4xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-blue-100 fade-in">
+    <h1 class="text-4xl font-bold text-center text-blue-900 mb-8 tracking-wide">Form Surat Rekomendasi Rumah Singgah</h1>
+
+    <form action="generate_pdf.php" method="POST" class="space-y-8">
+
+      <!-- Pendamping -->
+      <div class="bg-blue-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="font-semibold text-blue-900 mb-4 text-xl">Data Pendamping</h2>
+
+        <label class="block mb-1">Nama:</label>
+        <input type="text" name="pendamping_nama" class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" required>
+
+        <label class="block mt-4 mb-1">NIK:</label>
+        <input type="text" name="pendamping_nik" pattern="\d{16}" minlength="16" maxlength="16"
+          class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition nik-input" required
+          title="NIK harus terdiri dari 16 digit angka">
+
+        <label class="block mt-4 mb-1">Alamat:</label>
+        <textarea name="pendamping_alamat" rows="2"
+          class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" required></textarea>
+        <p class="text-sm text-gray-500 mt-1">Contoh: Dusun Sukamaju, Desa Karangrejo, RT 02 RW 03, Kec. Balen, Kab. Bojonegoro</p>
+
+        <label class="block mt-4 mb-1">Hubungan dengan Pasien:</label>
+        <select name="pendamping_hubungan" class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" required>
+          <option value="">-- Pilih Hubungan --</option>
+          <option value="Suami atau Istri">Suami atau Istri</option>
+          <option value="Anak">Anak</option>
+          <option value="Orang Tua">Orang Tua</option>
+          <option value="Saudara Kandung">Saudara Kandung</option>
+        </select>
+      </div>
+
+      <!-- Rujukan -->
+      <div class="bg-blue-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <label class="block font-semibold mb-2 text-blue-900">Rujukan dari RS/Puskesmas:</label>
+        <input type="text" name="rujukan_dari" class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" required>
+      </div>
+
+      <!-- Pasien -->
+      <div class="bg-blue-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="font-semibold text-blue-900 mb-4 text-xl">Data Pasien Rujukan</h2>
+
+        <label class="block mb-1">Nama:</label>
+        <input type="text" name="pasien_nama" class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" required>
+
+        <label class="block mt-4 mb-1">NIK:</label>
+        <input type="text" name="pasien_nik" pattern="\d{16}" minlength="16" maxlength="16"
+          class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition nik-input" required
+          title="NIK harus terdiri dari 16 digit angka">
+
+        <label class="block mt-4 mb-1">Alamat:</label>
+        <textarea name="pasien_alamat" rows="2"
+          class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" required></textarea>
+        <p class="text-sm text-gray-500 mt-1">Contoh: Dusun Sukamaju, Desa Karangrejo, RT 02 RW 03, Kec. Balen, Kab. Bojonegoro</p>
+      </div>
+
+      <!-- Tombol Aksi -->
+      <div class="flex justify-between items-center mt-6">
+        <button type="button" onclick="history.back()"
+          class="inline-flex items-center px-6 py-2 rounded-full border border-blue-900 text-blue-900 bg-white hover:bg-blue-100 transition duration-300 shadow hover:shadow-md">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Kembali
+        </button>
+        <button type="submit"
+          class="bg-blue-900 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg">
+          Cetak Surat
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <script>
+    // Validasi angka untuk NIK
+    const nikInputs = document.querySelectorAll('.nik-input');
+    nikInputs.forEach(input => {
+      input.addEventListener('input', function (e) {
+        e.target.value = e.target.value.replace(/\D/g, '');
+      });
+    });
+  </script>
+
+</body>
+</html>

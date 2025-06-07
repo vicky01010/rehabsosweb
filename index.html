@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DINAS SOSIAL KABUPATEN BOJONEGORO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tambahkan di dalam <head> -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Tambahkan link Animate.css dan Font Awesome di <head> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .animated-gradient {
+      background: linear-gradient(-45deg, #002147, #005b96, #00a8e8, #002147);
+      background-size: 300% 300%;
+      animation: gradientMove 10s ease infinite;
+    }
+
+    .nav-underline {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav-underline::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background-color: #facc15;
+      /* Tailwind yellow-400 */
+      transition: width 0.3s ease;
+    }
+
+    .nav-underline:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 font-sans min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-[#002147] text-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center animate__animated animate__fadeInDown">
+      <div class="flex items-center gap-4">
+        <img src="galery/logo.png" alt="Logo Dinsos" class="h-12 w-auto" />
+        <div>
+          <h1 class="text-lg font-semibold tracking-wide">DINAS SOSIAL</h1>
+          <p class="text-sm tracking-wider">KABUPATEN BOJONEGORO</p>
+        </div>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm font-semibold">
+        <a href="#beranda" class="nav-underline hover:text-yellow-300 transition duration-300">Beranda</a>
+        <a href="#profil" class="nav-underline hover:text-yellow-300 transition duration-300">Profil</a>
+        <a href="#layanan" class="nav-underline hover:text-yellow-300 transition duration-300">Layanan</a>
+        <a href="#layanan-unggulan-container" class="nav-underline hover:text-yellow-300 transition duration-300">Unggulan</a>
+        <a href="#kontak" class="nav-underline hover:text-yellow-300 transition duration-300">Kontak</a>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section id="beranda" class="relative min-h-screen flex items-center justify-center bg-cover bg-center"
+    style="background-image: url('galery/bg-bojonegoro.jpg');">
+  
+    <!-- Gradient overlay animated -->
+    <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-blue-900/50 animate__animated animate__fadeIn"></div>
+  
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center text-white max-w-2xl p-8 animate__animated animate__zoomIn">
+      <h2 class="text-3xl md:text-5xl font-bold mb-5 drop-shadow-md">Selamat Datang di Pelayanan Rehabsos</h2>
+      <p class="text-lg md:text-xl mb-6 drop-shadow">Dinas Sosial Kabupaten Bojonegoro</p>
+      <a href="#layanan"
+        class="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+        Lihat Layanan
+      </a>
+    </div>
+  
+    <!-- Animated Scroll Down Indicator -->
+    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce text-white">
+      <i class="fas fa-angle-double-down text-2xl"></i>
+    </div>
+  </section>
+
+  <!-- Profil Section -->
+<section id="profil" class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+
+      <!-- Gambar -->
+      <div class="flex justify-center" data-aos="fade-right">
+        <img src="galery/profil-dinsos.jpg" alt="Gedung Dinas Sosial" class="rounded-2xl shadow-lg w-full max-w-md">
+      </div>
+
+      <!-- Teks -->
+      <div data-aos="fade-left">
+        <h3 class="text-3xl font-bold text-[#002147] mb-4">Profil Dinas Sosial</h3>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          Dinas Sosial Kabupaten Bojonegoro merupakan instansi pemerintah daerah yang bertugas menyelenggarakan urusan
+          di bidang sosial, termasuk pelayanan dan rehabilitasi sosial, pemberdayaan masyarakat miskin, serta
+          penanganan masalah kesejahteraan sosial.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          Dengan semangat pelayanan publik, kami berkomitmen untuk memberikan pelayanan terbaik kepada masyarakat
+          Bojonegoro, menciptakan keadilan sosial, dan meningkatkan kualitas hidup kelompok rentan serta masyarakat
+          kurang mampu.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Section Layanan -->
+  <section id="layanan" class="py-16 bg-gradient-to-b from-gray-50 via-gray-100 to-white shadow-inner">
+    <div class="max-w-7xl mx-auto px-4">
+      <h3 class="text-3xl font-bold text-center mb-2 text-[#002147]">Layanan Kami</h3>
+      <p class="text-center text-gray-600 text-lg mb-12">Berikut layanan publik yang dapat Anda akses secara online.</p>
+      <div class="grid md:grid-cols-2 gap-10">
+  
+        <!-- Layanan 1 -->
+        <div
+          class="bg-white p-6 rounded-2xl shadow-md border border-transparent hover:border-yellow-400 hover:shadow-xl hover:scale-[1.02] hover:rotate-[0.3deg] transition-transform duration-300"
+          data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="bg-yellow-400 p-3 rounded-full">
+              <!-- Icon Rumah (Lucide Style) -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#002147]" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M3 12l2-2 7-7 7 7 2 2" />
+                <path d="M9 21V9h6v12" />
+              </svg>
+            </div>
+            <h4 class="text-xl font-semibold text-[#002147]">Permohonan Surat Rumah Singgah</h4>
+          </div>
+          <p class="text-gray-700 mb-4">Ajukan permohonan surat rekomendasi untuk menggunakan layanan rumah singgah yang
+            disediakan oleh Dinas Sosial Kabupaten Bojonegoro.</p>
+          <a href="rumahSG.html"
+            class="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-[#002147] font-semibold py-2 px-5 rounded-full transition group">
+            Ajukan Sekarang
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+  
+        <!-- Layanan 2 -->
+        <div
+          class="bg-white p-6 rounded-2xl shadow-md border border-transparent hover:border-yellow-400 hover:shadow-xl hover:scale-[1.02] hover:rotate-[0.3deg] transition-transform duration-300"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="bg-yellow-400 p-3 rounded-full">
+              <!-- Icon Chat (Lucide Style) -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#002147]" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path
+                  d="M7 8h10M7 12h4m1 8c-4.418 0-8-2.239-8-5V6c0-2.761 3.582-5 8-5s8 2.239 8 5v9c0 2.761-3.582 5-8 5z" />
+              </svg>
+            </div>
+            <h4 class="text-xl font-semibold text-[#002147]">Masukan, Kritik dan Saran</h4>
+          </div>
+          <p class="text-gray-700 mb-4">Bantu kami meningkatkan layanan dengan memberikan kritik, saran, atau masukan
+            Anda melalui formulir online.</p>
+          <a href="kritik&saran/index.html"
+            class="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-[#002147] font-semibold py-2 px-5 rounded-full transition group">
+            Kirim Masukan
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <div id="layanan-unggulan-container" class="space-y-4">
+    <section id="layanan-unggulan" class="py-16 lg:py-20 bg-slate-50"> <!-- Sedikit off-white background untuk section -->
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 lg:mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold text-[#002147] tracking-tight">
+            Layanan Unggulan Kami
+          </h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            Temukan berbagai layanan sosial yang kami sediakan untuk mendukung kesejahteraan masyarakat Kabupaten
+            Bojonegoro.
+          </p>
+        </div>
+  
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          <!-- Kartu Layanan 1 -->
+          <div
+            class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 flex flex-col">
+            <div class="p-6 lg:p-8 flex-grow">
+              <div class="mb-5">
+                <!-- Ganti dengan SVG Ikon yang sesuai -->
+                <div class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-blue-100 text-blue-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-xl font-semibold text-[#002147] mb-3">Bantuan Sosial Terpadu</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-5">
+                Akses berbagai program bantuan sosial yang dirancang untuk keluarga dan individu yang membutuhkan.
+              </p>
+            </div>
+            <div class="p-6 lg:p-8 pt-0">
+              <a href="https://dinsos.bojonegorokab.go.id/menu/detail/48/BANTUANSOSIAL" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium group">
+                Pelajari Lebih Lanjut
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+  
+          <!-- Kartu Layanan 2 - Persyaratan Pelayanan Publik -->
+          <div
+            class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 flex flex-col">
+            <div class="p-6 lg:p-8 flex-grow">
+              <div class="mb-5">
+                <div class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-green-100 text-green-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.092 1.209-.138 2.43-.138 3.662s.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.092-1.209.138-2.43.138-3.662zM15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-xl font-semibold text-[#002147] mb-3">Persyaratan Pelayanan Publik</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-5">
+                Program layanan publik ini meningkatkan kemudahan masyarakat dalam mengajukan program publik.
+              </p>
+            </div>
+            <div class="p-6 lg:p-8 pt-0">
+              <a href="https://dinsos.bojonegorokab.go.id/menu/detail/44/PERSYARATANPELAYANAN" class="inline-flex items-center text-green-600 hover:text-green-800 font-medium group">
+                Lihat Layanan
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+  
+          <!-- Kartu Layanan 3 - Berita Terkini -->
+          <div
+            class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 flex flex-col">
+            <div class="p-6 lg:p-8 flex-grow">
+              <div class="mb-5">
+                <div class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-purple-100 text-purple-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-xl font-semibold text-[#002147] mb-3">Berita Terkini</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-5">
+                Berita Terkini memudahkan masyarakat mendapatkan update informasi layanan dan program bantuan dan yang lainnya.
+              </p>
+            </div>
+            <div class="p-6 lg:p-8 pt-0">
+              <a href="https://dinsos.bojonegorokab.go.id/berita/" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium group">
+                Info Detail
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Kontak Section dengan Peta -->
+  <section id="kontak" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-3xl font-bold text-center text-[#002147] mb-12">Hubungi Kami</h3>
+
+      <div class="grid md:grid-cols-2 gap-10">
+        <!-- Informasi Kontak -->
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="bg-yellow-400 p-2 rounded-full">
+              <svg class="h-6 w-6 text-[#002147]" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M16 12H8m0 0l-4 4m4-4l-4-4m16 0l-4 4m4-4l-4-4" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-[#002147]">Email</h4>
+              <p class="text-gray-700">dinsos@bojonegoro.go.id</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="bg-yellow-400 p-2 rounded-full">
+              <svg class="h-6 w-6 text-[#002147]" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path
+                  d="M3 5a2 2 0 012-2h1.586a1 1 0 01.707.293l2.414 2.414a1 1 0 010 1.414L8.414 8.586a16.017 16.017 0 007 7l1.465-1.465a1 1 0 011.414 0l2.414 2.414a1 1 0 01.293.707V19a2 2 0 01-2 2h-1c-9.941 0-18-8.059-18-18V5z" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-[#002147]">Telepon</h4>
+              <p class="text-gray-700">(0353) 881234</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="bg-yellow-400 p-2 rounded-full">
+              <svg class="h-6 w-6 text-[#002147]" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M17.657 16.657L13.414 12.414a2 2 0 00-2.828 0l-4.243 4.243a8 8 0 1111.314 0z" />
+                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-[#002147]">Alamat</h4>
+              <p class="text-gray-700">Jl. Dr Wahidin No. 40, Bojonegoro</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Peta -->
+        <div class="rounded-lg overflow-hidden shadow-lg">
+          <iframe src="https://www.google.com/maps?q=Dinas+Sosial+Bojonegoro&output=embed" width="100%" height="250"
+            style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Modern Minimalis -->
+  <footer class="bg-[#002147] text-white pt-10 pb-6 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+
+        <!-- Bagian 1: Info Dinas -->
+        <div>
+          <h4 class="text-xl font-bold">Dinas Sosial</h4>
+          <p class="text-sm text-gray-300 mt-1">Kabupaten Bojonegoro</p>
+          <p class="text-sm text-gray-400 mt-2">Jl. Dr. Wahidin No. 40, Bojonegoro</p>
+        </div>
+
+        <!-- Bagian 2: Navigasi -->
+        <div>
+          <h4 class="text-lg font-semibold mb-2">Navigasi</h4>
+          <ul class="space-y-1 text-sm">
+            <li><a href="#beranda" class="hover:underline hover:text-yellow-300 transition">Beranda</a></li>
+            <li><a href="#profil" class="hover:underline hover:text-yellow-300 transition">Profil</a></li>
+            <li><a href="#layanan" class="hover:underline hover:text-yellow-300 transition">Layanan</a></li>
+            <li><a href="#layanan-unggulan-container" class="hover:underline hover:text-yellow-300 transition">Unggulan</a></li>
+            <li><a href="#kontak" class="hover:underline hover:text-yellow-300 transition">Kontak</a></li>
+          </ul>
+        </div>
+
+        <!-- Bagian 3: Kontak -->
+        <div>
+          <h4 class="text-lg font-semibold mb-2">Hubungi Kami</h4>
+          <p class="text-sm text-gray-300">Email: dinsos@bojonegoro.go.id</p>
+          <p class="text-sm text-gray-300">Telp: (0353) 888918</p>
+          <div class="mt-4 flex justify-center md:justify-start gap-4">
+            <a href="#" class="hover:text-yellow-400 transition" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="hover:text-yellow-400 transition" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="hover:text-yellow-400 transition" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Garis pemisah -->
+      <div class="border-t border-gray-600 my-6"></div>
+
+      <!-- Hak cipta dan tombol admin di samping -->
+      <div class="flex justify-center items-center text-sm text-gray-400 space-x-4">
+        <p>&copy; 2025 Dinas Sosial Kabupaten Bojonegoro. All rights reserved. by vicky</p>
+        <a href="admin_form/login.php" class="inline-flex items-center text-yellow-500 hover:text-yellow-600">Admin</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Tambahkan sebelum penutup </body> -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+        offset: 120,         // Jarak sebelum elemen masuk viewport (px)
+        delay: 0,            // Delay animasi (ms)
+        duration: 1000,      // Durasi animasi (ms)
+        easing: 'ease',      // Tipe easing animasi
+        once: false,         // <-- ini supaya animasi berulang
+        mirror: false         // Animasi juga aktif saat scroll ke atas
+      });
+  </script>
+</body>
+
+</html>

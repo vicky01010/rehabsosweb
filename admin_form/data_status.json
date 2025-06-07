@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "nama": "Pengajuan Beasiswa",
+        "status": "disetujui"
+    },
+    {
+        "id": 2,
+        "nama": "Renovasi Kelas",
+        "status": "pending"
+    },
+    {
+        "id": 3,
+        "nama": "Pengadaan Alat",
+        "status": "pending"
+    }
+]
